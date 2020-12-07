@@ -6,16 +6,10 @@ import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   const addTodo = () => {
-    Axios.post("http://localhost:5000/add", { newTodo: todo });
+    Axios.post("https://mern-todo-vrd.herokuapp.com/add", { newTodo: todo });
   };
 
   const [todo, setTodo] = useState("");
-
-  // useEffect(() => {
-  //   Axios.get("http://localhost:5000/read").then((response) => {
-  //     console.log(response);
-  //   });
-  // });
 
   return (
     <div>

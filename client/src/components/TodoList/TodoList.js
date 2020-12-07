@@ -25,17 +25,20 @@ const TodoList = () => {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/read").then((response) => {
+    Axios.get("https://mern-todo-vrd.herokuapp.com/read").then((response) => {
       setTodoList(response.data);
     });
   });
 
   const updateTodo = (id) => {
-    Axios.put("http://localhost:5000/update", { id: id, newTodo: updatedTodo });
+    Axios.put("https://mern-todo-vrd.herokuapp.com/update", {
+      id: id,
+      newTodo: updatedTodo,
+    });
   };
 
   const deleteTodo = (id) => {
-    Axios.delete(`http://localhost:5000/delete/${id}`);
+    Axios.delete(`https://mern-todo-vrd.herokuapp.com/delete/${id}`);
   };
 
   return (
